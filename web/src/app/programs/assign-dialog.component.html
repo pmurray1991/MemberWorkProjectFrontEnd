@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Assign People to "{{ program.name }}"</h2>
+<mat-dialog-content>
+  @for (person of people; track person.id) {
+    <div style="display:flex; align-items:center; gap:8px;">
+      <mat-checkbox
+        [checked]="selectedIds.has(person.id)"
+        (change)="toggle(person.id, $event.checked!)">
+      </mat-checkbox>
+      <div>
+        <div>{{ person.firstName }} {{ person.lastName }}</div>
+        <div style="font-size:12px; opacity:0.7;">
+          {{ person.email }}
+        </div>
+      </div>
+    </div>
+  }
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+</mat-dialog-actions>

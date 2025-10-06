@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>Memberworks: People & Programs</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/people">People</a>
+  <a mat-button routerLink="/programs">Programs</a>
+</mat-toolbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<style>
+  .spacer { flex: 1; }
+  .container { padding: 16px; }
+</style>
